@@ -3,11 +3,11 @@ package org.practicatrim2
 import org.practicatrim2.Habitacion.Habitacion
 
 fun main() {
-    val nombre = pedirNombre()
+    /*val nombre = pedirNombre()
     val usuario1 = Usuario(nombre)
-    EscapeRoom(usuario1).iniciarEscapeRoom()
+    EscapeRoom(usuario1).iniciarEscapeRoom()*/
 
-
+    val habitacion1 = Habitacion(Historia.Nave,GenerarContraseñaEspacio().procesar(Historia.Nave).toString())
 
 
 

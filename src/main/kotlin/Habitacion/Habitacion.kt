@@ -1,6 +1,7 @@
 package org.practicatrim2.Habitacion
 
 import org.practicatrim2.Historia
+import kotlin.random.Random
 
 /**
  *
@@ -10,16 +11,16 @@ open class Habitacion(tematica:Historia,contraseña :String){
     val solucionHabitacion = textoABinario(contraseña)
     val solcionado = false
     fun Enigma(){
-
-
-    }
-
-    fun cajones(){
+        val lugarPista =listOf(cajones,lampara)[Random.nextInt(0,2)]
 
     }
 
-    fun lampara(){
+    object cajones{
+        val pista = false
+    }
 
+    object lampara{
+        val pista = false
     }
 
     fun armario(){
@@ -34,8 +35,8 @@ open class Habitacion(tematica:Historia,contraseña :String){
 }
 
 fun textoABinario(texto: String): String {
-    texto.split(" ").removeLast()
-    return texto.map { char -> char.toInt().toString(2).padStart(8, '0') }.joinToString(" ")
+    val textoDeLosPrimeros = texto.split(" ").removeLast()
+    return textoDeLosPrimeros.map { char -> char.toInt().toString(2).padStart(8, '0') }.joinToString(" ")
 }
 
 interface Solucion<T>{
