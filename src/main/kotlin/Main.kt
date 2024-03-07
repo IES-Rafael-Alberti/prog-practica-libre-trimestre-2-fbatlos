@@ -3,16 +3,17 @@ package org.practicatrim2
 import org.practicatrim2.Habitacion.Habitacion
 
 fun main() {
-    /*val nombre = pedirNombre()
+    val nombre = pedirNombre()
     val usuario1 = Usuario(nombre)
-    EscapeRoom(usuario1).iniciarEscapeRoom()*/
+    EscapeRoom(usuario1).iniciarEscapeRoom()
 
     val habitacion1 = Habitacion(Historia.Maldicion,GenerarContraseñaMaldicion().procesar(Historia.Maldicion).toString())
     habitacion1.Enigma()
+
 }
 
 fun pedirNombre(): String {
-    println("Dime tu nombre para el Escape Room : La cambia formas")
+    println("Dime tu nombre para el Escape Room : La cambiaformas")
     var nombre: String? = null
     do {
         try {

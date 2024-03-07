@@ -10,7 +10,6 @@ class EscapeRoom(usuario: Usuario) {
     fun iniciarEscapeRoom(){
         println("La habitacion cambio de forma y la historia que te ha tocado se titula :\n                                ${historia.name}")
         println("************************************************************************************************************************")
-        println(historia.desc)
         val PrimeraHabitacion = Habitacion(historia,contraseña)
 
     }

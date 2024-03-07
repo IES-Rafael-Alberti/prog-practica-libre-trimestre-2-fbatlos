@@ -1,19 +1,21 @@
 package org.practicatrim2.Habitacion
 
 import org.practicatrim2.Historia
+import org.practicatrim2.Movimiento
 import kotlin.random.Random
 
 /**
  *
  */
 open class Habitacion(tematica:Historia,contraseña :String){
-    val tipoHistio = tematica.name
+    val tipoHistio = tematica
     val pista = textoABinario(contraseña)
     val solcionado = false
-
+    var lugar = "habitacion"
     fun Enigma(){
+        println(tipoHistio.desc["Inicio"])
         ponerPista(Random.nextInt(1,5))
-        val solucion = readln()
+        lugar = Movimiento(lugar,1)
 
 
 
@@ -21,21 +23,83 @@ open class Habitacion(tematica:Historia,contraseña :String){
 
     object cajones{
         var pista = false
-
+        fun abrir(){
+            if (pista){
+                println("Oh , hay algo")
+                val cantidadPuntos = 5
+                val tiempoEsperaMs = 1000L
+                for (i in 1..cantidadPuntos) {
+                    print(".")
+                    Thread.sleep(tiempoEsperaMs)
+                }
+                println("Has encontrado un hoja de papel.\nLa lees y pone : $pista\n")
+                println("Sabes que es ?")
+                pista = false
+            }else{
+                println("No hay nada has perdido 2 min.")
+            }
+        }
     }
 
     object lampara{
         var pista = false
+        fun abrir(){
+            if (cajones.pista){
+                println("Oh , hay algo")
+                val cantidadPuntos = 5
+                val tiempoEsperaMs = 1000L
+                for (i in 1..cantidadPuntos) {
+                    print(".")
+                    Thread.sleep(tiempoEsperaMs)
+                }
+                println("Has encontrado un hoja de papel.\nLa lees y pone : ${cajones.pista}\n")
+                println("Sabes que es ?")
+                cajones.pista = false
+            }else{
+                println("No hay nada has perdido 2 min.")
+            }
+        }
     }
 
     object armario{
         var pista = false
+        fun abrir(){
+            if (cajones.pista){
+                println("Oh , hay algo")
+                val cantidadPuntos = 5
+                val tiempoEsperaMs = 1000L
+                for (i in 1..cantidadPuntos) {
+                    print(".")
+                    Thread.sleep(tiempoEsperaMs)
+                }
+                println("Has encontrado un hoja de papel.\nLa lees y pone : ${cajones.pista}\n")
+                println("Sabes que es ?")
+                cajones.pista = false
+            }else{
+                println("No hay nada has perdido 2 min.")
+            }
+        }
     }
 
     object señor{
         var pista = false
+        fun abrir(){
+            if (cajones.pista){
+                println("Oh , hay algo")
+                val cantidadPuntos = 5
+                val tiempoEsperaMs = 1000L
+                for (i in 1..cantidadPuntos) {
+                    print(".")
+                    Thread.sleep(tiempoEsperaMs)
+                }
+                println("Has encontrado un hoja de papel.\nLa lees y pone : ${cajones.pista}\n")
+                println("Sabes que es ?")
+                cajones.pista = false
+            }else{
+                println("No hay nada has perdido 2 min.")
+            }
+        }
     }
-
 
 }
 fun ponerPista(lugar:Int){
@@ -75,7 +139,7 @@ fun dividirTextoNumeros(texto: String):List<String>{
     return textoDeLosPrimeros
 }
 
-    fun <T> comprobarSolucionParte1(codigo:T, posibleSolucio:T):Boolean{
+    fun <T> comprobarSolucionParte1(codigo:T, posibleSolucio:T):Boolean{//No esta bien implementado pero puedes hacerlo estilo pila.
         val codigoNecesario = codigo.toString().split(" ")
         val Solucion = posibleSolucio.toString().split(" ")
         if (codigoNecesario[0] == Solucion[0] && codigoNecesario[1] == Solucion[1] ){
