@@ -7,10 +7,8 @@ fun main() {
     val usuario1 = Usuario(nombre)
     EscapeRoom(usuario1).iniciarEscapeRoom()*/
 
-    val habitacion1 = Habitacion(Historia.Nave,GenerarContraseñaEspacio().procesar(Historia.Nave).toString())
-
-
-
+    val habitacion1 = Habitacion(Historia.Maldicion,GenerarContraseñaMaldicion().procesar(Historia.Maldicion).toString())
+    habitacion1.Enigma()
 }
 
 fun pedirNombre(): String {
