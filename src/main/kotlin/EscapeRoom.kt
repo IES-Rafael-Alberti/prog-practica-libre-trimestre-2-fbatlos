@@ -1,14 +1,16 @@
 package org.practicatrim2
 
+import org.practicatrim2.Habitacion.Habitacion
 import kotlin.random.Random
 
 class EscapeRoom(usuario: Usuario) {
-    val inicio = Historia.values().toList()[Random.nextInt(0,3)]
-    val contraseña = GestionContraseña(inicio)
+    val historia = Historia.values().toList()[Random.nextInt(0,3)]
+    val contraseña = GestionContraseña(historia)
     fun iniciarEscapeRoom(){
-        //values().toList()[Random.nextInt(0,3)]
-        println(contraseña)
-        println(inicio.desc["Inicio"])
+        println("La habitacion cambio de forma y la historia que te ha tocado se titula :\n                                ${historia.name}")
+        println("************************************************************************************************************************")
+        println(historia.desc)
+        val PrimeraHabitacion = Habitacion(historia,contraseña)
 
     }
 }
