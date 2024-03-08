@@ -11,6 +11,6 @@ class EscapeRoom(usuario: Usuario) {
         println("La habitacion cambio de forma y la historia que te ha tocado se titula :\n                                ${historia.name}")
         println("************************************************************************************************************************")
         val PrimeraHabitacion = Habitacion(historia,contraseña)
-
+        PrimeraHabitacion.Enigma()
     }
 }

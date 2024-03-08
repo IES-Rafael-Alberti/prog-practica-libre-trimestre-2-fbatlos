@@ -1,4 +1,4 @@
-NO2 H2O Pb4
-Ur6 Wf8 Ni3
-Mg1 Sc7 Kr5
-F9O Xe4 Yb7
+NOH HVO PbF
+TmB WfP NiU
+MgC ScI KrH
+FeO XeY YbC
