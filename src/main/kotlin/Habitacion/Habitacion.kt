@@ -7,7 +7,7 @@ import kotlin.random.Random
 /**
  *
  */
-open class Habitacion(tematica:Historia,val contraseña :String){
+open class Habitacion(tematica:Historia,val contraseña: String){
     val tipoHistio = tematica
     open val pistacifrada = textoABinario(contraseña)
     var solucionado = false
@@ -20,8 +20,6 @@ open class Habitacion(tematica:Historia,val contraseña :String){
             lugar = MovimientoJugador(lugar)
 
         }while (!solucionado)
-
-
     }
 
     object cajones{
@@ -158,6 +156,10 @@ open class Habitacion(tematica:Historia,val contraseña :String){
                         return "puerta"
                     }
                 }
+                else -> {
+                    println("No existe donde quieres ir.")
+                    return lugarDondeEstas
+                }
             }
         }while (teHasMovido == false)
         return ""
@@ -172,7 +174,6 @@ fun ponerPista(lugar:Int){
         4 -> {Habitacion.señor.pista = true}
     }
 }
-
 
 fun textoABinario(texto: String): String {//Mirar como coger num y strings
     if(comprobarTexto(texto)){
@@ -211,24 +212,21 @@ fun dividirTextoLetras(texto: String): String {
     val textoDeLosPrimeros = texto[0] + texto[1]
     return textoDeLosPrimeros
 }
+
 fun dividirTextoNumeros(texto: String):List<String>{
     val texto = texto.split(" ")
     val textoDeLosPrimeros = listOf(texto[0],texto[1])
     return textoDeLosPrimeros
 }
 
-    fun  comprobarSolucionParte1(codigo:String, posibleSolucio:String):Boolean{//No esta bien implementado pero puedes hacerlo estilo pila.
+fun  comprobarSolucionParte1(codigo:String, posibleSolucio:String):Boolean{
         val codigoNecesario = codigo.split(" ")
         val Solucion = posibleSolucio.split(" ")
         if (codigoNecesario[0] == Solucion[0] && codigoNecesario[1] == Solucion[1] ){
+            println("La puesta se ha abierto.")
             return true
-        }else {return false}
-    }
-
-    fun <T> comprobarSolucionParte2(codigo:T, posibleSolucio:T):Boolean{
-        val codigoNecesario = codigo.toString().split(" ")[2]
-        val Solucion = posibleSolucio.toString()
-        if (codigoNecesario == Solucion){
-            return true
-        }else{return  false}
+        }else {
+            println("Hay algo mal pero no sabes que es...")
+            return false
+        }
     }

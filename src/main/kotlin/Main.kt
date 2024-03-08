@@ -7,9 +7,6 @@ fun main() {
     val nombre = pedirNombre()
     val usuario1 = Usuario(nombre)
     EscapeRoom(usuario1).iniciarEscapeRoom()
-
-
-
 }
 
 fun pedirNombre(): String {
