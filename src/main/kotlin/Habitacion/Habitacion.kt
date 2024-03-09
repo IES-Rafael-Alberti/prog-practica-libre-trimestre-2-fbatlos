@@ -12,10 +12,11 @@ open class Habitacion(tematica:Historia,val contraseña: String){
     open val pistacifrada = textoABinario(contraseña)
     var solucionado = false
     var lugar = "habitacion"
-    fun Enigma(){
+    open fun Enigma(){
         println(tipoHistio.desc["Inicio"])
         ponerPista(Random.nextInt(1,5))
         do {
+
             println("Estas mirando la $lugar.\n")
             lugar = MovimientoJugador(lugar)
 
