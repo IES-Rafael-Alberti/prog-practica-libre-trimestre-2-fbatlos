@@ -1,8 +1,7 @@
 package org.practicatrim2
 
 import org.practicatrim2.Habitacion.Habitacion
-import org.practicatrim2.Habitacion.comprobarSolucionParte1
-import org.practicatrim2.Habitacion.pedirLugarDondeIr
+
 
 data class Usuario(val nombre:String)
 

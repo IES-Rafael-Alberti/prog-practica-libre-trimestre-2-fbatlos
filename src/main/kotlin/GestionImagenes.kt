@@ -1,8 +1,5 @@
 package org.practicatrim2
 
-import org.practicatrim2.Habitacion.HabitacionLaboratorio
-import org.practicatrim2.Habitacion.HabitacionMaldicion
-import org.practicatrim2.Habitacion.HabitacionNave
 import java.io.BufferedReader
 import java.io.FileReader
 
@@ -34,9 +31,9 @@ class Gestion {
                 var imagen = " "
                 try {
                     if (BufferedReader(FileReader(direccionTxt)).use{it.readLine() } == contraseña){
-                        imagen = "dibujoNaveKey1.png"
+                        imagen = "imagenNaveKey1.png"
                     }else{
-                        imagen = "dibujoNaveKey2.png"
+                        imagen = "imagenNaveKey2.png"
                     }
                 }catch (_:Exception){
                     println("No se ha encontrado el Txt.")

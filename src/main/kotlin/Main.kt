@@ -1,15 +1,10 @@
 package org.practicatrim2
 
-import org.practicatrim2.Habitacion.Habitacion
-import org.practicatrim2.Habitacion.textoABinario
 
 fun main() {
-    /*val nombre = pedirNombre()
+    val nombre = pedirNombre()
     val usuario1 = Usuario(nombre)
-    EscapeRoom(usuario1).iniciarEscapeRoom()*/
-    val tema = Historia.Maldicion
-    val contraseña = GenerarContraseñaMaldicion().procesar(tema)
-    Imagen().mostrar(tema, contraseña.toString())
+    EscapeRoom(usuario1).iniciarEscapeRoom()
 }
 
 fun pedirNombre(): String {
