@@ -1,5 +1,9 @@
 package org.practicatrim2
-
+/**
+ * Enumeración que representa diferentes historias para habitaciones de Escape Room.
+ * Cada historia tiene descripciones para los eventos de inicio, intermedio y final.
+ * @property desc Un mapa que contiene descripciones para las fases de inicio, intermedio y final de cada historia.
+ */
 enum class Historia(val desc:Map<String,String>) {
 
     Maldicion( mapOf(

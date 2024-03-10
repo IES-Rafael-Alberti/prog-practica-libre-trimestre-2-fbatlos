@@ -4,18 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7c7eb868-b939-4b97-9779-d045ed053859" name="Changes" comment="Ya muestra la imagen">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/Habitacion/Habitacion2.kt" afterDir="false" />
+    <list default="true" id="7c7eb868-b939-4b97-9779-d045ed053859" name="Changes" comment="Ya está 100% funcional solo queda obligar errores , comentar y hacer pruebas a los metodos">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Contraseña.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Contraseña.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/EscapeRoom.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/EscapeRoom.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/GestionImagenes.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/GestionImagenes.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Habitacion/GestionDeSegundaHabitacion.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Habitacion/Habitacion.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Habitacion/Habitacion.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Habitacion/HabitacionLaboratorio.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Habitacion/HabitacionMaldicion.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Habitacion/HabitacionNave.kt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/Historias.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Historias.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/Imagen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Imagen.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ImagenesHabitaciones/ImagenNave.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Main.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/Usuario.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Usuario.kt" afterDir="false" />
     </list>
@@ -128,14 +123,23 @@
       <option name="project" value="LOCAL" />
       <updated>1710034895435</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Ya está 100% funcional solo queda obligar errores , comentar y hacer pruebas a los metodos">
+      <option name="closed" value="true" />
+      <created>1710086117433</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1710086117433</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Inicio , Falta mirar contraseña y demas" />
     <MESSAGE value="Ya puede pasar a la siguente fase" />
     <MESSAGE value="Ya muestra la imagen" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ya muestra la imagen" />
+    <MESSAGE value="Ya está 100% funcional solo queda obligar errores , comentar y hacer pruebas a los metodos" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ya está 100% funcional solo queda obligar errores , comentar y hacer pruebas a los metodos" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
