@@ -7,9 +7,6 @@ import java.io.File
 import javax.imageio.ImageIO
 import javax.swing.JFrame
 import javax.swing.JPanel
-interface Imagen {
-    fun mostrar()
-}
 
 class ImagePanel(private val imagePath: String) : JPanel() {
 
@@ -20,41 +17,25 @@ class ImagePanel(private val imagePath: String) : JPanel() {
     }
 }
 
-
-
-class imagenMaldicion:Imagen{
-    override fun mostrar() {
-        val imagePath = "C:\\Users\\Paco\\IdeaProjects\\prog-practica-libre-trimestre-2-fbatlos\\src\\main\\kotlin\\ImagenesHabitaciones/dibujoMaldicion.png"
-        val frame = JFrame("Imagen en Kotlin")
+class Imagen(){
+     fun mostrar( tematica:Historia, contraseña: String) {
+         val dimensiones = gestionDeDiemnsiones(tematica)
+         val imagePath = Gestion().Direccion(tematica, contraseña)
+         val frame = JFrame("Imagen en Kotlin")
         frame.defaultCloseOperation = JFrame.EXIT_ON_CLOSE
-        frame.setSize(800, 600)
+        frame.setSize(dimensiones[0], dimensiones[1])
         val imagePanel = ImagePanel(imagePath)
         frame.contentPane.add(imagePanel)
         frame.isVisible = true
     }
-}
 
-class imagenNave:Imagen{
-    override fun mostrar() {
-        val imagePath = "C:\\Users\\Paco\\IdeaProjects\\prog-practica-libre-trimestre-2-fbatlos\\src\\main\\kotlin\\ImagenesHabitaciones/dibujoNave.png"
-        val frame = JFrame("Imagen en Kotlin")
-        frame.defaultCloseOperation = JFrame.EXIT_ON_CLOSE
-        frame.setSize(800, 600)
-        val imagePanel = ImagePanel(imagePath)
-        frame.contentPane.add(imagePanel)
-        frame.isVisible = true
+    fun gestionDeDiemnsiones(tematica: Historia): List<Int> {
+        if (tematica.name == "Maldicion"){
+            return listOf(1600,1024)
+        }else{
+            return listOf(1024,1024)
+        }
     }
 }
 
-class imagenLaboratorio:Imagen{
-    override fun mostrar() {
-        val imagePath = "C:\\Users\\Paco\\IdeaProjects\\prog-practica-libre-trimestre-2-fbatlos\\src\\main\\kotlin\\ImagenesHabitaciones/dibujoLaboratorio.png"
-        val frame = JFrame("Imagen en Kotlin")
-        frame.defaultCloseOperation = JFrame.EXIT_ON_CLOSE
-        frame.setSize(800, 600)
-        val imagePanel = ImagePanel(imagePath)
-        frame.contentPane.add(imagePanel)
-        frame.isVisible = true
-    }
-}
 
