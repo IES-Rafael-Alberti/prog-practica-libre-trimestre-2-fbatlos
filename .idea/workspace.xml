@@ -4,15 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7c7eb868-b939-4b97-9779-d045ed053859" name="Changes" comment="Ya está 100% funcional solo queda obligar errores , comentar y hacer pruebas a los metodos">
+    <list default="true" id="7c7eb868-b939-4b97-9779-d045ed053859" name="Changes" comment="Ya seleciona bien el tipo y la contraseña segun el tipo">
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/Habitacion/HabitacionTest.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Contraseña.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Contraseña.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/EscapeRoom.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/EscapeRoom.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/GestionImagenes.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/GestionImagenes.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Historias.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Historias.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Imagen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Imagen.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Main.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Usuario.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Usuario.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,6 +37,7 @@
         <option value="Kotlin Enum" />
         <option value="Kotlin Interface" />
         <option value="Kotlin Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -55,19 +51,32 @@
   &quot;associatedIndex&quot;: 6
 }</component>
   <component name="ProjectId" id="2dKv7oA8MRtSb8u1XuGijvOeCyO" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Downloaded.Files.Path.Enabled": "false",
     "Gradle.Build prog-practica-libre-trimestre-2-fbatlos.executor": "Run",
     "Kotlin.MainKt.executor": "Run",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true"
+    "kotlin-language-version-configured": "true",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.62528735"
   },
   "keyToStringList": {
     "ChangesTree.GroupingKeys": [
@@ -75,6 +84,107 @@
     ]
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="Habitacion" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="Habitacion" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.HabitacionTest.TestcomprobarTexto">
+    <configuration name="HabitacionTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="PRO_2324_u4u5u6_libre.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.practicatrim2.Habitacion.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.practicatrim2.Habitacion" />
+      <option name="MAIN_CLASS_NAME" value="org.practicatrim2.Habitacion.HabitacionTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HabitacionTest.TestcomprobarTexto" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="PRO_2324_u4u5u6_libre.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.practicatrim2.Habitacion.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.practicatrim2.Habitacion" />
+      <option name="MAIN_CLASS_NAME" value="org.practicatrim2.Habitacion.HabitacionTest" />
+      <option name="METHOD_NAME" value="TestcomprobarTexto" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HabitacionTest.comprobarTexto (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="PRO_2324_u4u5u6_libre.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Habitacion.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Habitacion" />
+      <option name="MAIN_CLASS_NAME" value="Habitacion.HabitacionTest" />
+      <option name="METHOD_NAME" value="comprobarTexto" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HabitacionTest.comprobarTexto (2)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="PRO_2324_u4u5u6_libre.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.practicatrim2.Habitacion.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.practicatrim2.Habitacion" />
+      <option name="MAIN_CLASS_NAME" value="org.practicatrim2.Habitacion.HabitacionTest" />
+      <option name="METHOD_NAME" value="comprobarTexto(java.lang.String)" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HabitacionTest.comprobarTexto" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="PRO_2324_u4u5u6_libre.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Habitacion.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Habitacion" />
+      <option name="MAIN_CLASS_NAME" value="Habitacion.HabitacionTest" />
+      <option name="METHOD_NAME" value="comprobarTexto(java.lang.String)" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.HabitacionTest.TestcomprobarTexto" />
+        <item itemvalue="JUnit.HabitacionTest" />
+        <item itemvalue="JUnit.HabitacionTest.comprobarTexto (2)" />
+        <item itemvalue="JUnit.HabitacionTest.comprobarTexto (1)" />
+        <item itemvalue="JUnit.HabitacionTest.comprobarTexto" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -135,13 +245,24 @@
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Inicio , Falta mirar contraseña y demas" />
     <MESSAGE value="Ya puede pasar a la siguente fase" />
     <MESSAGE value="Ya muestra la imagen" />
     <MESSAGE value="Ya está 100% funcional solo queda obligar errores , comentar y hacer pruebas a los metodos" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ya está 100% funcional solo queda obligar errores , comentar y hacer pruebas a los metodos" />
+    <MESSAGE value="Ya seleciona bien el tipo y la contraseña segun el tipo" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ya seleciona bien el tipo y la contraseña segun el tipo" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/kotlin/Habitacion/HabitacionTest.kt</url>
+          <line>12</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <watches-manager>
       <configuration name="JetRunConfigurationType">
         <watch expression="pista" />
