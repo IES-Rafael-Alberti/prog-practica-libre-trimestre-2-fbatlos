@@ -1,18 +1,20 @@
 package org.practicatrim2.Habitacion
 
 import org.practicatrim2.Historia
-import org.practicatrim2.comprobarLugar
+import org.practicatrim2.normalizar
+import javax.sound.sampled.AudioFormat
+import javax.sound.sampled.spi.AudioFileReader
 import kotlin.random.Random
 
 /**
  *
  */
-open class Habitacion(tematica:Historia,val contraseña: String){
+class Habitacion(tematica:Historia,val contraseña: String){
     val tipoHistio = tematica
-    open val pistacifrada = textoABinario(contraseña)
-    open var solucionado = false
+    val pistacifrada = textoABinario(contraseña)
+    var solucionado = false
     var lugar = "habitacion"
-    open fun Enigma(){
+    fun Enigma(){
         println(tipoHistio.desc["Inicio"])
         ponerPista(Random.nextInt(1,5))
         do {
@@ -111,7 +113,7 @@ open class Habitacion(tematica:Historia,val contraseña: String){
             when (lugarDondeVas) {
                 1 -> {
                     if (comprobarLugar(lugarDondeEstas, "cajones")) {
-                        Habitacion.cajones.abrir(this)
+                        cajones.abrir(this)
                         teHasMovido = true
                         return "cajones"
                     }
@@ -119,7 +121,7 @@ open class Habitacion(tematica:Historia,val contraseña: String){
 
                 2 -> {
                     if (comprobarLugar(lugarDondeEstas, "lampara")) {
-                        Habitacion.lampara.abrir(this)
+                        lampara.abrir(this)
                         teHasMovido = true
                         return "lampara"
                     }
@@ -127,7 +129,7 @@ open class Habitacion(tematica:Historia,val contraseña: String){
 
                 3 -> {
                     if (comprobarLugar(lugarDondeEstas, "armario")) {
-                        Habitacion.armario.abrir(this)
+                        armario.abrir(this)
                         teHasMovido = true
                         return "armario"
                     }
@@ -135,7 +137,7 @@ open class Habitacion(tematica:Historia,val contraseña: String){
 
                 4 -> {
                     if (comprobarLugar(lugarDondeEstas, "señor")) {
-                        Habitacion.señor.abrir(this)
+                        señor.abrir(this)
                         teHasMovido = true
                         return "señor"
                     }
@@ -235,12 +237,20 @@ open class Habitacion(tematica:Historia,val contraseña: String){
         }
     }
 
-    fun String.normalizar():String{
-        val frase = this
-        val fraseSinEspacio = frase.trim()
-        val cadaPalabra= fraseSinEspacio.split(" ").filter { it.isNotEmpty() }
-        val palabrasCapitalizadas = cadaPalabra.map { it.replaceFirstChar { it.uppercase() } }
-        return palabrasCapitalizadas.joinToString(" ")
+    /**
+     * Función que comprueba si el usuario ya se encuentra en el lugar al que se dirige.
+     * @param lugarDondeEstas El lugar actual del usuario.
+     * @param lugarDondeVas El lugar al que se dirige el usuario.
+     * @return `true` si el usuario no está en el mismo lugar al que se dirige o si se dirige a la "puerta",
+     *  y `false` si ya está en el lugar al que se dirige (y no es la "puerta").
+     */
+    fun comprobarLugar(lugarDondeEstas:String,lugarDondeVas: String):Boolean{
+        if (lugarDondeEstas == lugarDondeVas && lugarDondeVas != "puerta"){
+            println("Ya estas ahí.")
+            return false
+        }else{
+            return true
+        }
     }
 }
 

@@ -5,19 +5,18 @@ import java.io.File
  * Interfaz para la generación de contraseñas basadas en una temática específica.
  * @param Historia Tipo de dato que representa la temática de la contraseña.
  */
-interface Contraseña<Historia>{
+interface Contrasenia<T>{
     /**
      * Procesa la temática dada y genera una contraseña.
      * @param tematica La temática sobre la cual se genera la contraseña.
      * @return La contraseña generada o null si no se puede obtener.
      */
-    fun procesar(tematica:Historia):String?
-
+    fun procesar(tematica:T):String?
 }
 /**
  * Implementación de la interfaz [Contraseña] para generar contraseñas relacionadas con la maldición.
  */
-class GenerarContraseñaMaldicion:Contraseña<Historia>{
+class GenerarContraseñaMaldicion:Contrasenia<Historia>{
     override fun procesar(tematica: Historia): String? {
         var workingDirectory = System.getProperty("user.dir")
         workingDirectory +="\\src\\main\\kotlin\\ContraseñasTxt"
@@ -28,7 +27,7 @@ class GenerarContraseñaMaldicion:Contraseña<Historia>{
 /**
  * Implementación de la interfaz [Contraseña] para generar contraseñas relacionadas con el espacio.
  */
-class GenerarContraseñaEspacio:Contraseña<Historia>{
+class GenerarContraseñaEspacio:Contrasenia<Historia>{
     override fun procesar(tematica: Historia):String? {
         var workingDirectory = System.getProperty("user.dir")
         workingDirectory +="\\src\\main\\kotlin\\ContraseñasTxt"
@@ -39,7 +38,7 @@ class GenerarContraseñaEspacio:Contraseña<Historia>{
 /**
  * Implementación de la interfaz [Contraseña] para generar contraseñas relacionadas con un laboratorio.
  */
-class GenerarContraseñaLaboratorio:Contraseña<Historia>{
+class GenerarContraseñaLaboratorio:Contrasenia<Historia>{
     override fun procesar(tematica: Historia):String? {
         var workingDirectory = System.getProperty("user.dir")
         workingDirectory +="\\src\\main\\kotlin\\ContraseñasTxt"

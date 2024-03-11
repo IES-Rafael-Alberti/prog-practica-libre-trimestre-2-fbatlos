@@ -3,10 +3,12 @@ package org.practicatrim2.Habitacion
 
 import org.practicatrim2.Historia
 import org.practicatrim2.Imagen
+import org.practicatrim2.normalizar
 
-class Habitacion2(val tematica: Historia, contraseña: String): Habitacion(tematica,contraseña) {
-    override var solucionado = false
-    override fun Enigma() {
+class Habitacion2(val tematica: Historia, val contraseña: String) {
+    var solucionado = false
+
+    fun Enigma() {
         println(tematica.desc["Intermedio"])
         if (tematica.name == "Maldicion"){
             println("Busca la contraseña y ponla en el orden correcto ya que el tiempo empieza arriba y termina bajando.(Deja un espacion entre palabra y palabra)")
@@ -31,6 +33,5 @@ class Habitacion2(val tematica: Historia, contraseña: String): Habitacion(temat
             println("No es la solucion , dale una vuelta.")
         }
     }
-
 
 }
