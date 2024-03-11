@@ -4,15 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7c7eb868-b939-4b97-9779-d045ed053859" name="Changes" comment="Ya está 100% funcional solo queda obligar errores , comentar y hacer pruebas a los metodos">
+    <list default="true" id="7c7eb868-b939-4b97-9779-d045ed053859" name="Changes" comment="Tienes que hacer una 3º habitacion la cual sea parecida a Habitancion y que cada habitacion te da una parte de la contraseña , comentar(vender que el gestion contraseña sea un generico)y hacer pruebas a los metodos">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Contraseña.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Contraseña.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/GestionImagenes.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/GestionImagenes.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/Habitacion/Habitacion.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Habitacion/Habitacion.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Habitacion/Habitacion2.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Habitacion/Habitacion2.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Habitacion/HabitacionTest.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Main.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Usuario.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Usuario.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,8 +35,8 @@
       <list>
         <option value="Kotlin Enum" />
         <option value="Kotlin Interface" />
-        <option value="Kotlin Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Kotlin Class" />
       </list>
     </option>
   </component>
@@ -254,7 +248,23 @@
       <option name="project" value="LOCAL" />
       <updated>1710174690748</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Tienes que hacer una 3º habitacion la cual sea parecida a Habitancion y que cada habitacion te da una parte de la contraseña , comentar(vender que el gestion contraseña sea un generico)y hacer pruebas a los metodos">
+      <option name="closed" value="true" />
+      <created>1710186237147</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1710186237147</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Tienes que hacer una 3º habitacion la cual sea parecida a Habitancion y que cada habitacion te da una parte de la contraseña , comentar(vender que el gestion contraseña sea un generico)y hacer pruebas a los metodos">
+      <option name="closed" value="true" />
+      <created>1710186319831</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1710186319831</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -264,7 +274,8 @@
     <MESSAGE value="Ya muestra la imagen" />
     <MESSAGE value="Ya seleciona bien el tipo y la contraseña segun el tipo" />
     <MESSAGE value="Ya está 100% funcional solo queda obligar errores , comentar y hacer pruebas a los metodos" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ya está 100% funcional solo queda obligar errores , comentar y hacer pruebas a los metodos" />
+    <MESSAGE value="Tienes que hacer una 3º habitacion la cual sea parecida a Habitancion y que cada habitacion te da una parte de la contraseña , comentar(vender que el gestion contraseña sea un generico)y hacer pruebas a los metodos" />
+    <option name="LAST_COMMIT_MESSAGE" value="Tienes que hacer una 3º habitacion la cual sea parecida a Habitancion y que cada habitacion te da una parte de la contraseña , comentar(vender que el gestion contraseña sea un generico)y hacer pruebas a los metodos" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

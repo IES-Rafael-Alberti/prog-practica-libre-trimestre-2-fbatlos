@@ -2,19 +2,17 @@ package org.practicatrim2.Habitacion
 
 import org.practicatrim2.Historia
 import org.practicatrim2.normalizar
-import javax.sound.sampled.AudioFormat
-import javax.sound.sampled.spi.AudioFileReader
 import kotlin.random.Random
 
 /**
  *
  */
-class Habitacion(tematica:Historia,val contraseña: String){
+open class Habitacion(tematica:Historia,val contraseña: String){
     val tipoHistio = tematica
     val pistacifrada = textoABinario(contraseña)
     var solucionado = false
     var lugar = "habitacion"
-    fun Enigma(){
+    open fun Enigma(){
         println(tipoHistio.desc["Inicio"])
         ponerPista(Random.nextInt(1,5))
         do {
@@ -85,10 +83,10 @@ class Habitacion(tematica:Historia,val contraseña: String){
         }
     }
 
-    object señor{
+    object senior{
         var pista = false
         fun abrir(objeto:Habitacion){
-            if (señor.pista){
+            if (senior.pista){
                 println("Oh , hay algo")
                 val cantidadPuntos = 5
                 val tiempoEsperaMs = 1000L
@@ -98,14 +96,14 @@ class Habitacion(tematica:Historia,val contraseña: String){
                 }
                 println("\nHas encontrado un hoja de papel.\nLa lees y pone : ${objeto.pistacifrada}\n")
                 println("Sabes que es ?")
-                señor.pista = false
+                senior.pista = false
             }else{
                 println("No hay nada has perdido 2 min.")
             }
         }
     }
 
-    fun MovimientoJugador(lugarDondeEstas:String): String {
+    open fun MovimientoJugador(lugarDondeEstas:String): String{
         var teHasMovido = false
         var lugarDondeVas: Int
         do {
@@ -137,7 +135,7 @@ class Habitacion(tematica:Historia,val contraseña: String){
 
                 4 -> {
                     if (comprobarLugar(lugarDondeEstas, "señor")) {
-                        señor.abrir(this)
+                        senior.abrir(this)
                         teHasMovido = true
                         return "señor"
                     }
@@ -172,16 +170,16 @@ class Habitacion(tematica:Historia,val contraseña: String){
         return ""
     }
 
-    fun ponerPista(lugar:Int){
+    open fun ponerPista(lugar:Int){
         when(lugar){
             1 -> {Habitacion.cajones.pista = true}
             2 -> {Habitacion.lampara.pista = true}
             3 -> {Habitacion.armario.pista = true}
-            4 -> {Habitacion.señor.pista = true}
+            4 -> {Habitacion.senior.pista = true}
         }
     }
 
-    fun textoABinario(texto: String): String {//Mirar como coger num y strings
+    private fun textoABinario(texto: String): String {//Mirar como coger num y strings
         if(comprobarTexto(texto)){
             val textoEnigma1 = dividirTextoLetras(texto)
             return textoEnigma1.map { char -> char.toInt().toString(2).padStart(8, '0') }.joinToString(" ")
@@ -191,7 +189,7 @@ class Habitacion(tematica:Historia,val contraseña: String){
         }
     }
 
-    fun pedirLugarDondeIr():Int {
+    open fun pedirLugarDondeIr():Int {
         var cambioConsegido = false
         var numero:String
         do {
@@ -209,23 +207,23 @@ class Habitacion(tematica:Historia,val contraseña: String){
         return numero.toInt()
     }
 
-    fun comprobarTexto(texto: String):Boolean{
+    open fun comprobarTexto(texto: String):Boolean{
         return !texto.all { it.isDigit() }
     }
 
-    fun dividirTextoLetras(texto: String): String {
+    open fun dividirTextoLetras(texto: String): String {
         val texto = texto.split(" ")
         val textoDeLosPrimeros = texto[0] + texto[1]
         return textoDeLosPrimeros
     }
 
-    fun dividirTextoNumeros(texto: String):List<String>{
+    open fun dividirTextoNumeros(texto: String):List<String>{
         val texto = texto.split(" ")
         val textoDeLosPrimeros = listOf(texto[0],texto[1])
         return textoDeLosPrimeros
     }
 
-    fun  comprobarSolucionParte1(codigo:String, posibleSolucio:String):Boolean{
+    open fun  comprobarSolucionParte1(codigo:String, posibleSolucio:String):Boolean{
         val codigoNecesario = codigo.split(" ")
         val Solucion = posibleSolucio.split(" ")
         if (codigoNecesario[0] == Solucion[0] && codigoNecesario[1] == Solucion[1] ){
@@ -244,7 +242,7 @@ class Habitacion(tematica:Historia,val contraseña: String){
      * @return `true` si el usuario no está en el mismo lugar al que se dirige o si se dirige a la "puerta",
      *  y `false` si ya está en el lugar al que se dirige (y no es la "puerta").
      */
-    fun comprobarLugar(lugarDondeEstas:String,lugarDondeVas: String):Boolean{
+    open fun comprobarLugar(lugarDondeEstas:String,lugarDondeVas: String):Boolean{
         if (lugarDondeEstas == lugarDondeVas && lugarDondeVas != "puerta"){
             println("Ya estas ahí.")
             return false
