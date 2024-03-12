@@ -92,13 +92,17 @@ class Consola {
     }
 
     fun abrePuerta(){
-
+        println("La puesta se ha abierto.\n")
     }
 
     fun noSeAbrePuerta(){
-
+        println("Hay algo mal pero no sabes que es...")
     }
 
+
+    fun noMovimiento(){
+        println("Ya estas ahí.")
+    }
 }
 
 /*Porcentajes

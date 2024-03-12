@@ -148,10 +148,10 @@ open class Habitacion(tematica:Historia,val contraseña: String){
         val codigoNecesario = codigo.split(" ")
         val Solucion = posibleSolucio.split(" ")
         if (codigoNecesario[0] == Solucion[0] && codigoNecesario[1] == Solucion[1] ){
-            println("La puesta se ha abierto.\n")
+            Consola().abrePuerta()
             return true
         }else {
-            println("Hay algo mal pero no sabes que es...")
+            Consola().noSeAbrePuerta()
             return false
         }
     }
@@ -165,7 +165,7 @@ open class Habitacion(tematica:Historia,val contraseña: String){
      */
     open fun comprobarLugar(lugarDondeEstas:String,lugarDondeVas: String):Boolean{
         if (lugarDondeEstas == lugarDondeVas && lugarDondeVas != "puerta"){
-            println("Ya estas ahí.")
+            Consola().noMovimiento()
             return false
         }else{
             return true
