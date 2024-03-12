@@ -12,12 +12,11 @@ class EscapeRoom(usuario: Usuario) {
 
 
     fun iniciarEscapeRoom(){
-        println("La habitacion cambio de forma y la historia que te ha tocado se titula :\n                                ${historia.name}")
-        println("************************************************************************************************************************")
+        Consola().historiaInico(historia)
         Habitacion(historia,contraseña).Enigma()
         Habitacion2(historia,contraseña).Enigma()
         Habitacion3(historia,contraseña).Enigma()
-        println(historia.desc["Final"])
+        Consola().historiaFinal(historia)
     }
 }
 

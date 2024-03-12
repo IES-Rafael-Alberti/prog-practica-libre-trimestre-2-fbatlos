@@ -1,5 +1,6 @@
 package org.practicatrim2.Habitacion
 
+import org.practicatrim2.Consola
 import org.practicatrim2.Historia
 import org.practicatrim2.normalizar
 import kotlin.random.Random
@@ -8,16 +9,14 @@ import kotlin.random.Random
  *
  */
 open class Habitacion(tematica:Historia,val contraseña: String){
-    val tipoHistio = tematica
+    val tipoHistoria = tematica
     val pistacifrada = textoABinario(contraseña)
     var solucionado = false
     var lugar = "habitacion"
     open fun Enigma(){
-        println(tipoHistio.desc["Inicio"])
         ponerPista(Random.nextInt(1,5))
         do {
-
-            println("Estas mirando la $lugar.\n")
+            Consola().lugarDondeMiras(lugar)
             lugar = MovimientoJugador(lugar)
 
         }while (!solucionado)
@@ -31,27 +30,21 @@ open class Habitacion(tematica:Historia,val contraseña: String){
             "senior" to false
         )
     }
+
     fun abrirObjeto(nombreObjeto:String){
         if (Objeto.pistas[nombreObjeto] == true){
-            println("Oh , hay algo")
-            val cantidadPuntos = 5
-            val tiempoEsperaMs = 1000L
-            for (i in 1..cantidadPuntos) {
-                print(".")
-                Thread.sleep(tiempoEsperaMs)
-            }
-            println("\nHas encontrado un hoja de papel.\nLa lees y pone : ${pistacifrada}\n")
-            println("Sabes que es ?")
+            Consola().encontrarPista(pistacifrada)
             Objeto.pistas[nombreObjeto]= true
         }else{
-            println("No hay nada has perdido 2 min.")
+            Consola().noHayPista()
         }
     }
+
     open fun MovimientoJugador(lugarDondeEstas:String): String{
         var teHasMovido = false
         var lugarDondeVas: Int
         do {
-            lugarDondeVas = pedirLugarDondeIr()
+            lugarDondeVas = Consola().pedirLugarDondeIr()
             when (lugarDondeVas) {
                 1 -> {
                     if (comprobarLugar(lugarDondeEstas, "cajones")) {
@@ -100,7 +93,7 @@ open class Habitacion(tematica:Historia,val contraseña: String){
                     }
                 }
                 else -> {
-                    println("No existe donde quieres ir.")
+                    Consola().noExiste()
                     return lugarDondeEstas
                 }
             }
@@ -109,14 +102,9 @@ open class Habitacion(tematica:Historia,val contraseña: String){
     }
 
     private fun abrirPuerta() {
-        val mensaje = if (tipoHistio.name == "Maldicion") {
-            "La puerta solo permite una palabra espacio otra palabra sino nunca lo dará por buena.\nContraseña : "
-        } else {
-            "La puerta solo permite de tres caracteres en tres caracteres sino nunca lo dará por buena.\nContraseña : "
-        }
-        print(mensaje)
-        val posibleContraseña = readln().normalizar()
-        solucionado = comprobarSolucionParte1(contraseña, posibleContraseña)
+        Consola().mensajePuerta(tipoHistoria)
+        val posibleContrasenia =Consola().pedirContrasenia()
+        solucionado = comprobarSolucionParte1(contraseña, posibleContrasenia)
     }
 
     open fun ponerPista(lugar:Int){
@@ -138,23 +126,7 @@ open class Habitacion(tematica:Historia,val contraseña: String){
         }
     }
 
-    open fun pedirLugarDondeIr():Int {
-        var cambioConsegido = false
-        var numero:String
-        do {
-            println("Donde quieres ir?")
-            print("Opciones donde mirar :\n1º cajones.\n2º lampara.\n3º armario.\n4º señor.\n5º habitacion.\n6º puerta\n-> ")
-            numero = readln()
-            try {
-                numero.toInt()
-                cambioConsegido = true
 
-            } catch (_: Exception) {
-                println("El numero no es valido\n")
-            }
-        }while (!cambioConsegido)
-        return numero.toInt()
-    }
 
     open fun comprobarTexto(texto: String):Boolean{
         return !texto.all { it.isDigit() }
