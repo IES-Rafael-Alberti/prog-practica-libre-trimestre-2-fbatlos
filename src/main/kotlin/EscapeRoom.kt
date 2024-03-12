@@ -16,6 +16,7 @@ class EscapeRoom(usuario: Usuario) {
         println("************************************************************************************************************************")
         Habitacion(historia,contraseña).Enigma()
         Habitacion2(historia,contraseña).Enigma()
+        Habitacion3(historia,contraseña).Enigma()
         println(historia.desc["Final"])
     }
 }

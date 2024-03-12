@@ -23,86 +23,30 @@ open class Habitacion(tematica:Historia,val contraseña: String){
         }while (!solucionado)
     }
 
-    object cajones{
-        var pista = false
-        fun abrir(objeto:Habitacion){
-            if (pista){
-                println("Oh , hay algo")
-                val cantidadPuntos = 5
-                val tiempoEsperaMs = 1000L
-                for (i in 1..cantidadPuntos) {
-                    print(".")
-                    Thread.sleep(tiempoEsperaMs)
-                }
-                println("Has encontrado un hoja de papel.\nLa lees y pone : ${objeto.pistacifrada}\n")
-                println("Sabes que es ?")
-                pista = false
-            }else{
-                println("No hay nada has perdido 2 min.")
+    object Objeto {
+        var pistas = mutableMapOf(
+            "cajones" to false,
+            "lampara" to false,
+            "armario" to false,
+            "senior" to false
+        )
+    }
+    fun abrirObjeto(nombreObjeto:String){
+        if (Objeto.pistas[nombreObjeto] == true){
+            println("Oh , hay algo")
+            val cantidadPuntos = 5
+            val tiempoEsperaMs = 1000L
+            for (i in 1..cantidadPuntos) {
+                print(".")
+                Thread.sleep(tiempoEsperaMs)
             }
+            println("\nHas encontrado un hoja de papel.\nLa lees y pone : ${pistacifrada}\n")
+            println("Sabes que es ?")
+            Objeto.pistas[nombreObjeto]= true
+        }else{
+            println("No hay nada has perdido 2 min.")
         }
     }
-
-    object lampara{
-        var pista = false
-        fun abrir(objeto:Habitacion){
-            if (lampara.pista){
-                println("Oh , hay algo")
-                val cantidadPuntos = 5
-                val tiempoEsperaMs = 1000L
-                for (i in 1..cantidadPuntos) {
-                    print(".")
-                    Thread.sleep(tiempoEsperaMs)
-                }
-                println("Has encontrado un hoja de papel.\nLa lees y pone : ${objeto.pistacifrada}\n")
-                println("Sabes que es ?")
-                lampara.pista = false
-            }else{
-                println("No hay nada has perdido 2 min.")
-            }
-        }
-    }
-
-    object armario{
-        var pista = false
-        fun abrir(objeto:Habitacion){
-            if (armario.pista){
-                println("Oh , hay algo")
-                val cantidadPuntos = 5
-                val tiempoEsperaMs = 1000L
-                for (i in 1..cantidadPuntos) {
-                    print(".")
-                    Thread.sleep(tiempoEsperaMs)
-                }
-                println("Has encontrado un hoja de papel.\nLa lees y pone : ${objeto.pistacifrada}\n")
-                println("Sabes que es ?")
-                armario.pista = false
-            }else{
-                println("No hay nada has perdido 2 min.")
-            }
-        }
-    }
-
-    object senior{
-        var pista = false
-        fun abrir(objeto:Habitacion){
-            if (senior.pista){
-                println("Oh , hay algo")
-                val cantidadPuntos = 5
-                val tiempoEsperaMs = 1000L
-                for (i in 1..cantidadPuntos) {
-                    print(".")
-                    Thread.sleep(tiempoEsperaMs)
-                }
-                println("\nHas encontrado un hoja de papel.\nLa lees y pone : ${objeto.pistacifrada}\n")
-                println("Sabes que es ?")
-                senior.pista = false
-            }else{
-                println("No hay nada has perdido 2 min.")
-            }
-        }
-    }
-
     open fun MovimientoJugador(lugarDondeEstas:String): String{
         var teHasMovido = false
         var lugarDondeVas: Int
@@ -111,7 +55,7 @@ open class Habitacion(tematica:Historia,val contraseña: String){
             when (lugarDondeVas) {
                 1 -> {
                     if (comprobarLugar(lugarDondeEstas, "cajones")) {
-                        cajones.abrir(this)
+                        abrirObjeto("cajones")
                         teHasMovido = true
                         return "cajones"
                     }
@@ -119,7 +63,7 @@ open class Habitacion(tematica:Historia,val contraseña: String){
 
                 2 -> {
                     if (comprobarLugar(lugarDondeEstas, "lampara")) {
-                        lampara.abrir(this)
+                        abrirObjeto("lampara")
                         teHasMovido = true
                         return "lampara"
                     }
@@ -127,7 +71,7 @@ open class Habitacion(tematica:Historia,val contraseña: String){
 
                 3 -> {
                     if (comprobarLugar(lugarDondeEstas, "armario")) {
-                        armario.abrir(this)
+                        abrirObjeto("armario")
                         teHasMovido = true
                         return "armario"
                     }
@@ -135,7 +79,7 @@ open class Habitacion(tematica:Historia,val contraseña: String){
 
                 4 -> {
                     if (comprobarLugar(lugarDondeEstas, "señor")) {
-                        senior.abrir(this)
+                        abrirObjeto("señor")
                         teHasMovido = true
                         return "señor"
                     }
@@ -150,13 +94,7 @@ open class Habitacion(tematica:Historia,val contraseña: String){
 
                 6 -> {
                     if (comprobarLugar(lugarDondeEstas,"puerta")){
-                        if (tipoHistio.name == "Maldicion"){
-                            print("La puerta solo permite una palabra espacio otra palabra sino nunca lo dará por buena.\nContraseña : ")
-                        }else {
-                            print("La puerta solo permite de tres caracteres en tres caracteres sino nunca lo dará por buena.\nContraseña : ")
-                        }
-                        val posibleContraseña = readln().normalizar()
-                        solucionado = comprobarSolucionParte1(contraseña,posibleContraseña)
+                        abrirPuerta()
                         teHasMovido = true
                         return "puerta"
                     }
@@ -170,12 +108,23 @@ open class Habitacion(tematica:Historia,val contraseña: String){
         return ""
     }
 
+    private fun abrirPuerta() {
+        val mensaje = if (tipoHistio.name == "Maldicion") {
+            "La puerta solo permite una palabra espacio otra palabra sino nunca lo dará por buena.\nContraseña : "
+        } else {
+            "La puerta solo permite de tres caracteres en tres caracteres sino nunca lo dará por buena.\nContraseña : "
+        }
+        print(mensaje)
+        val posibleContraseña = readln().normalizar()
+        solucionado = comprobarSolucionParte1(contraseña, posibleContraseña)
+    }
+
     open fun ponerPista(lugar:Int){
         when(lugar){
-            1 -> {Habitacion.cajones.pista = true}
-            2 -> {Habitacion.lampara.pista = true}
-            3 -> {Habitacion.armario.pista = true}
-            4 -> {Habitacion.senior.pista = true}
+            1 -> {Objeto.pistas["cajones"] = true}
+            2 -> {Objeto.pistas["lampara"] = true}
+            3 -> {Objeto.pistas["armario"] = true}
+            4 -> {Objeto.pistas["señor"] = true}
         }
     }
 
