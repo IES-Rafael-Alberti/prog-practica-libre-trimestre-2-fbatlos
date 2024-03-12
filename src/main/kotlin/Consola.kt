@@ -99,9 +99,30 @@ class Consola {
         println("Hay algo mal pero no sabes que es...")
     }
 
-
     fun noMovimiento(){
         println("Ya estas ahí.")
+    }
+
+    fun historiaIntermedia(historia: Historia){
+        println(historia.desc["Intermedio"])
+        if (historia.name == "Maldicion"){
+            println("Busca la contraseña y ponla en el orden correcto ya que el tiempo empieza arriba y termina bajando.(Deja un espacion entre palabra y palabra)")
+        }else {
+            println("Busca la contraseña y ponla en el orden correcto ya que el tiempo empieza arriba y termina bajando.(De tres en tres caracteres.)")
+        }
+    }
+
+    fun comprobarContraseña(contraseña: String ): Boolean {
+        print("Contraseña -> ")
+        val posibleContraseña = readln().normalizar()
+        if (contraseña == posibleContraseña){
+            println("¡El candado se ha abierto!\n")
+            return true
+        }
+        else{
+            println("No es la solucion , dale una vuelta.")
+            return false
+        }
     }
 }
 
