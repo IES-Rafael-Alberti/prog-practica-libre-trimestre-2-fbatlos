@@ -68,6 +68,15 @@ class Consola {
         print(mensaje)
     }
 
+    fun mensajePuerta2(historia: Historia){
+        val mensaje = if (historia.name == "Maldicion") {
+            "La puerta solo permite una palabra espacio otra palabra sino nunca lo dará por buena.\nContraseña : "
+        } else {
+            "La puerta solo permite de tres caracteres en tres caracteres sino nunca lo dará por buena.\nContraseña : "
+        }
+        print(mensaje)
+    }
+
     fun pedirContrasenia(): String {
         val posibleContraseña = readln().normalizar()
         return posibleContraseña

@@ -101,8 +101,8 @@ open class Habitacion(tematica:Historia,val contraseña: String){
         return ""
     }
 
-    private fun abrirPuerta() {
-        Consola().mensajePuerta(tipoHistoria)
+    open fun abrirPuerta() {
+        Consola().mensajePuerta2(tipoHistoria)
         val posibleContrasenia =Consola().pedirContrasenia()
         solucionado = comprobarSolucionParte1(contraseña, posibleContrasenia)
     }
@@ -125,8 +125,6 @@ open class Habitacion(tematica:Historia,val contraseña: String){
             return Integer.toBinaryString((textoEnigma1[0]+textoEnigma1[1]).toInt())
         }
     }
-
-
 
     open fun comprobarTexto(texto: String):Boolean{
         return !texto.all { it.isDigit() }
