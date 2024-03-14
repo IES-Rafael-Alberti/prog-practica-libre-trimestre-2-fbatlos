@@ -1,7 +1,9 @@
 package org.practicatrim2
-
 import org.practicatrim2.Habitacion.Habitacion2
-
+/**
+* Coge la frase , la divide por los espacios y la capitaliza.
+* @return Cada palabra de la frase capitalizada
+*/
 fun String.normalizar():String{
     val frase = this
     val fraseSinEspacio = frase.trim()
