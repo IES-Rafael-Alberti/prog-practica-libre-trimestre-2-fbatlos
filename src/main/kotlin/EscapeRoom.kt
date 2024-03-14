@@ -8,7 +8,7 @@ import kotlin.random.Random
  */
 class EscapeRoom(usuario: Usuario) {
     val historia = Historia.values().toList()[Random.nextInt(0,3)]
-    val contraseña = GestionContraseña(historia).toString()
+    val contraseña = GestionContrasenia(historia).toString()
 
 
     fun iniciarEscapeRoom(){

@@ -16,7 +16,7 @@ interface Contrasenia<T>{
 /**
  * Implementación de la interfaz [Contraseña] para generar contraseñas relacionadas con la maldición.
  */
-class GenerarContraseñaMaldicion:Contrasenia<Historia>{
+class GenerarContraseniaMaldicion:Contrasenia<Historia>{
     override fun procesar(tematica: Historia): String? {
         var workingDirectory = System.getProperty("user.dir")
         workingDirectory +="\\src\\main\\kotlin\\ContraseñasTxt"
@@ -27,7 +27,7 @@ class GenerarContraseñaMaldicion:Contrasenia<Historia>{
 /**
  * Implementación de la interfaz [Contraseña] para generar contraseñas relacionadas con el espacio.
  */
-class GenerarContraseñaEspacio:Contrasenia<Historia>{
+class GenerarContraseniaEspacio:Contrasenia<Historia>{
     override fun procesar(tematica: Historia):String? {
         var workingDirectory = System.getProperty("user.dir")
         workingDirectory +="\\src\\main\\kotlin\\ContraseñasTxt"
@@ -38,7 +38,7 @@ class GenerarContraseñaEspacio:Contrasenia<Historia>{
 /**
  * Implementación de la interfaz [Contraseña] para generar contraseñas relacionadas con un laboratorio.
  */
-class GenerarContraseñaLaboratorio:Contrasenia<Historia>{
+class GenerarContraseniaLaboratorio:Contrasenia<Historia>{
     override fun procesar(tematica: Historia):String? {
         var workingDirectory = System.getProperty("user.dir")
         workingDirectory +="\\src\\main\\kotlin\\ContraseñasTxt"
@@ -51,12 +51,12 @@ class GenerarContraseñaLaboratorio:Contrasenia<Historia>{
  * @param tematica La temática para la cual se generará la contraseña.
  * @return La contraseña generada o un mensaje predeterminado si la temática no coincide con ninguna categoría.
  */
-fun GestionContraseña(tematica: Historia): String? {
+fun GestionContrasenia(tematica: Historia): String? {
     return when(tematica.name)
     {
-        "Maldicion" -> {GenerarContraseñaMaldicion().procesar(tematica)}
-        "Nave" -> {GenerarContraseñaEspacio().procesar(tematica)}
-        "Laboratorio" -> {GenerarContraseñaLaboratorio().procesar(tematica)}
+        "Maldicion" -> {GenerarContraseniaMaldicion().procesar(tematica)}
+        "Nave" -> {GenerarContraseniaEspacio().procesar(tematica)}
+        "Laboratorio" -> {GenerarContraseniaLaboratorio().procesar(tematica)}
         else -> "Hola"
     }
 }

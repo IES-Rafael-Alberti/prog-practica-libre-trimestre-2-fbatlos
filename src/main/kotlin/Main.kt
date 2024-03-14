@@ -1,6 +1,6 @@
 package org.practicatrim2
-import kotlin.concurrent.timer
 
+import org.practicatrim2.Habitacion.Habitacion2
 
 fun String.normalizar():String{
     val frase = this
@@ -11,7 +11,7 @@ fun String.normalizar():String{
 }
 
 fun main() {
-    val nombre = Consola().pedirNombre()
-    val usuario1 = Usuario(nombre)
+   val nombre = Consola().pedirNombre()
+    val usuario1 = Usuario("pepe")
     EscapeRoom(usuario1).iniciarEscapeRoom()
 }

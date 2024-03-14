@@ -2,17 +2,16 @@ package org.practicatrim2.Habitacion
 
 import org.practicatrim2.Consola
 import org.practicatrim2.Historia
-import org.practicatrim2.normalizar
 import kotlin.random.Random
 
 /**
  *
  */
-open class Habitacion(tematica:Historia,val contraseña: String){
+open class Habitacion(tematica:Historia,val contrasenia: String){
     val tipoHistoria = tematica
-    val pistacifrada = textoABinario(contraseña)
-    var solucionado = false
-    var lugar = "habitacion"
+    val pistacifrada = textoABinario(contrasenia)
+    open var solucionado = false
+    open var lugar = "habitacion"
     open fun Enigma(){
         ponerPista(Random.nextInt(1,5))
         do {
@@ -31,7 +30,7 @@ open class Habitacion(tematica:Historia,val contraseña: String){
         )
     }
 
-    fun abrirObjeto(nombreObjeto:String){
+    open fun abrirObjeto(nombreObjeto:String){
         if (Objeto.pistas[nombreObjeto] == true){
             Consola().encontrarPista(pistacifrada)
             Objeto.pistas[nombreObjeto]= true
@@ -44,6 +43,7 @@ open class Habitacion(tematica:Historia,val contraseña: String){
         var teHasMovido = false
         var lugarDondeVas: Int
         do {
+            Consola().mostrarLugares1()
             lugarDondeVas = Consola().pedirLugarDondeIr()
             when (lugarDondeVas) {
                 1 -> {
@@ -71,10 +71,10 @@ open class Habitacion(tematica:Historia,val contraseña: String){
                 }
 
                 4 -> {
-                    if (comprobarLugar(lugarDondeEstas, "señor")) {
-                        abrirObjeto("señor")
+                    if (comprobarLugar(lugarDondeEstas, "senior")) {
+                        abrirObjeto("senior")
                         teHasMovido = true
-                        return "señor"
+                        return "senior"
                     }
                 }
 
@@ -102,9 +102,9 @@ open class Habitacion(tematica:Historia,val contraseña: String){
     }
 
     open fun abrirPuerta() {
-        Consola().mensajePuerta2(tipoHistoria)
+        Consola().mensajePuerta1(tipoHistoria)
         val posibleContrasenia =Consola().pedirContrasenia()
-        solucionado = comprobarSolucionParte1(contraseña, posibleContrasenia)
+        solucionado = comprobarSolucion(contrasenia, posibleContrasenia)
     }
 
     open fun ponerPista(lugar:Int){
@@ -112,7 +112,7 @@ open class Habitacion(tematica:Historia,val contraseña: String){
             1 -> {Objeto.pistas["cajones"] = true}
             2 -> {Objeto.pistas["lampara"] = true}
             3 -> {Objeto.pistas["armario"] = true}
-            4 -> {Objeto.pistas["señor"] = true}
+            4 -> {Objeto.pistas["senior"] = true}
         }
     }
 
@@ -126,26 +126,26 @@ open class Habitacion(tematica:Historia,val contraseña: String){
         }
     }
 
-    open fun comprobarTexto(texto: String):Boolean{
+    private fun comprobarTexto(texto: String):Boolean{
         return !texto.all { it.isDigit() }
     }
 
-    open fun dividirTextoLetras(texto: String): String {
+    private fun dividirTextoLetras(texto: String): String {
         val texto = texto.split(" ")
-        val textoDeLosPrimeros = texto[0] + texto[1]
+        val textoDeLosPrimeros = texto[0]
         return textoDeLosPrimeros
     }
 
-    open fun dividirTextoNumeros(texto: String):List<String>{
+    private fun dividirTextoNumeros(texto: String):List<String>{
         val texto = texto.split(" ")
-        val textoDeLosPrimeros = listOf(texto[0],texto[1])
+        val textoDeLosPrimeros = listOf(texto[0])
         return textoDeLosPrimeros
     }
 
-    open fun  comprobarSolucionParte1(codigo:String, posibleSolucio:String):Boolean{
+    open fun  comprobarSolucion(codigo:String, posibleSolucio:String):Boolean{
         val codigoNecesario = codigo.split(" ")
         val Solucion = posibleSolucio.split(" ")
-        if (codigoNecesario[0] == Solucion[0] && codigoNecesario[1] == Solucion[1] ){
+        if (codigoNecesario[0] == Solucion[0]){
             Consola().abrePuerta()
             return true
         }else {

@@ -4,7 +4,6 @@ package org.practicatrim2.Habitacion
 import org.practicatrim2.Consola
 import org.practicatrim2.Historia
 import org.practicatrim2.Imagen
-import org.practicatrim2.normalizar
 
 class Habitacion3(val tematica: Historia, val contraseña: String) {
     var solucionado = false
