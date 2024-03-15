@@ -156,8 +156,36 @@ https://github.com/IES-Rafael-Alberti/prog-practica-libre-trimestre-2-fbatlos/bl
 #### **Criterio global 6: Diseño de jerarquía de clases**
 - **(7.d, 7.e, 7.f, 7.g)**: Presenta la jerarquía de clases que diseñaste. ¿Cómo probaste y depuraste esta jerarquía para asegurar su correcto funcionamiento? ¿Qué tipo de herencia has utilizado: Especificación, Especialización, Extensión, Construcción?
 
+-Especificación
 
+Concepto: La subclase hereda las propiedades y comportamientos de la superclase, pero también introduce características únicas que la distinguen.
 
+https://github.com/IES-Rafael-Alberti/prog-practica-libre-trimestre-2-fbatlos/blob/bd74f1523f83381221e71b564a1482f1a2e24784/src/main/kotlin/Habitacion/Habitacion.kt#L7-L218
+
+Que heredará a habitacion 2 teniendo características propias. 
+https://github.com/IES-Rafael-Alberti/prog-practica-libre-trimestre-2-fbatlos/blob/bd74f1523f83381221e71b564a1482f1a2e24784/src/main/kotlin/Habitacion/Habitacion2.kt#L6-L155
+
+-Extensión 
+
+Concepto: La subclase mantiene el comportamiento de la superclase y agrega nuevas características o funcionalidades que extienden su uso o aplicabilidad.
+
+https://github.com/IES-Rafael-Alberti/prog-practica-libre-trimestre-2-fbatlos/blob/bd74f1523f83381221e71b564a1482f1a2e24784/src/main/kotlin/Habitacion/Habitacion.kt#L7-L218
+
+Que heredará a habitacion 2 agregando funcionalidad propia.
+
+https://github.com/IES-Rafael-Alberti/prog-practica-libre-trimestre-2-fbatlos/blob/bd74f1523f83381221e71b564a1482f1a2e24784/src/main/kotlin/Habitacion/Habitacion2.kt#L6-L155
+
+-Especificación 
+
+Concepto: La superclase establece un contrato que sus subclases deben cumplir, especificando los métodos que deben implementar sin necesariamente proporcionar una implementación concreta.
+
+https://github.com/IES-Rafael-Alberti/prog-practica-libre-trimestre-2-fbatlos/blob/bd74f1523f83381221e71b564a1482f1a2e24784/src/main/kotlin/Contrase%C3%B1a.kt#L4-L48
+
+-Construcción
+
+Concepto: La clase derivada utiliza la clase base como un punto de partida o una base sobre la cual construye su propia funcionalidad única, posiblemente sin mantener una relación conceptual "es un".
+
+https://github.com/IES-Rafael-Alberti/prog-practica-libre-trimestre-2-fbatlos/blob/bd74f1523f83381221e71b564a1482f1a2e24784/src/main/kotlin/Contrase%C3%B1a.kt#L4-L48
 
 #### **Criterio global 7: Librerías de clases**
 - **(2.g, 4.k)**: Describe cualquier librería externa que hayas incorporado en tu proyecto. Explica cómo y por qué las elegiste, y cómo las incorporaste en tu proyecto. ¿Cómo extendió la funcionalidad de tu aplicación? Proporciona ejemplos específicos de su uso en tu proyecto.
