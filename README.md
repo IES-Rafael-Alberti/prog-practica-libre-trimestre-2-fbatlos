@@ -156,12 +156,35 @@ https://github.com/IES-Rafael-Alberti/prog-practica-libre-trimestre-2-fbatlos/bl
 #### **Criterio global 6: Diseño de jerarquía de clases**
 - **(7.d, 7.e, 7.f, 7.g)**: Presenta la jerarquía de clases que diseñaste. ¿Cómo probaste y depuraste esta jerarquía para asegurar su correcto funcionamiento? ¿Qué tipo de herencia has utilizado: Especificación, Especialización, Extensión, Construcción?
 
+
+
+
 #### **Criterio global 7: Librerías de clases**
 - **(2.g, 4.k)**: Describe cualquier librería externa que hayas incorporado en tu proyecto. Explica cómo y por qué las elegiste, y cómo las incorporaste en tu proyecto. ¿Cómo extendió la funcionalidad de tu aplicación? Proporciona ejemplos específicos de su uso en tu proyecto.
+
+- Random
+
+Genera un numero aleatorio para elegir el tipo de historia.
+
+https://github.com/IES-Rafael-Alberti/prog-practica-libre-trimestre-2-fbatlos/blob/420e9b030b030171ebca79545d9e76abede0aeb2/src/main/kotlin/EscapeRoom.kt#L4-L11
+
+-Jframe
+
+Printea la imagen seleccionada de cada fichero.
+
+https://github.com/IES-Rafael-Alberti/prog-practica-libre-trimestre-2-fbatlos/blob/420e9b030b030171ebca79545d9e76abede0aeb2/src/main/kotlin/Imagen.kt#L2-L61
 
 #### **Criterio global 8: Documentado**
 - **(7.h)**: Muestra ejemplos de cómo has documentado y comentado tu código. ¿Que herramientas has utilizado? ¿Cómo aseguras que tu documentación aporte valor para la comprensión, mantenimiento y depuración del código?
 
+  Para la documentacion del codigo he usado kdoc , dando una breve descripcion de cada clase y metodo para dejar enclaro la funcionalidad de cada una.
+
+  https://github.com/IES-Rafael-Alberti/prog-practica-libre-trimestre-2-fbatlos/blob/caf3109c001d7ef9eea981f72df3776e885131f0/src/main/kotlin/Habitacion/Habitacion.kt#L157-L164
+
 #### **Criterio global 9: Genéricos**
 - **(6.f)**: Muestra ejemplos de tu código sobre cómo has implementado una clase con genéricos. ¿Qué beneficio has obtenido?
+
+He usado los genericos detal forma que podrias mandale al codigo cualquier tipo de dato para hacer la historia.
+
+https://github.com/IES-Rafael-Alberti/prog-practica-libre-trimestre-2-fbatlos/blob/420e9b030b030171ebca79545d9e76abede0aeb2/src/main/kotlin/Contrase%C3%B1a.kt#L4-L15
 
