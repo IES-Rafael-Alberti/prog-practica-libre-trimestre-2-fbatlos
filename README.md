@@ -66,18 +66,40 @@ Este conjunto de preguntas está diseñado para ayudarte a reflexionar sobre có
 
 #### **Criterio global 1: Instancia objetos y hacer uso de ellos**
 - **(2.a, 2.b, 2.c, 2.d, 2.f, 2.h, 4.f, 4.a)**: Describe cómo has instanciado y utilizado objetos en tu proyecto. ¿Cómo has aplicado los constructores y pasado parámetros a los métodos? Proporciona ejemplos específicos de tu código.
+
+- 
   –He instanciado y utilizado objetos de diversas clases para representar todos los elementos que tiene mi escape room , siendo estos las habitaciones , la contraseña , los objetos que hay en la habitación y la consola.
 - Mis objetos se instancian en diversas partes como el main y en el método iniciar escape room.
 
 -https://github.com/IES-Rafael-Alberti/prog-practica-libre-trimestre-2-fbatlos/blob/475de939a49027e587893d58ce62a37c68f9ddbe/src/main/kotlin/Main.kt#L16-L20
 
+https://github.com/IES-Rafael-Alberti/prog-practica-libre-trimestre-2-fbatlos/blob/7f671630bbce322940012c577c0fae2863db373e/src/main/kotlin/EscapeRoom.kt#L9-L21
+
+–Los constructores se usan para iniciar la clase y poder proporcionarle información de forma externa, en el siguente ejemplo te muestro como el escape room le otorga informacion de la historia y la contraseña a cada habitacion.
+
+https://github.com/IES-Rafael-Alberti/prog-practica-libre-trimestre-2-fbatlos/blob/7f671630bbce322940012c577c0fae2863db373e/src/main/kotlin/EscapeRoom.kt#L14-L19
+
 
 #### **Criterio global 2: Crear y llamar métodos estáticos**
 - **(4.i)**: ¿Has definido algún método/propiedad estático en tu proyecto? ¿Cuál era el objetivo y por qué consideraste que debía ser estático en lugar de un método/propiedad de instancia?
+-Si , he creado los objetos de la habitacion de forma estatica ya que estos no quiero que se generen de no por su clase , es decir , para que cada habitacion tenga sus diferentes objetos :
+
+https://github.com/IES-Rafael-Alberti/prog-practica-libre-trimestre-2-fbatlos/blob/7f671630bbce322940012c577c0fae2863db373e/src/main/kotlin/Habitacion/Habitacion.kt#L33-L43
+
 - **(2.e)**: ¿En qué parte del código se llama a un método estático o se utiliza la propiedad estática?
+
+-Aquí podemos ver en la como se utilliza dicha clase estatica.
+
+https://github.com/IES-Rafael-Alberti/prog-practica-libre-trimestre-2-fbatlos/blob/7f671630bbce322940012c577c0fae2863db373e/src/main/kotlin/Habitacion/Habitacion.kt#L131-L142
+
 
 #### **Criterio global 3: Uso de entornos**
 - **(2.i)**: ¿Cómo utilizaste el IDE para el desarrollo de tu proyecto? Describe el proceso de creación, compilación, y prueba de tu programa.
+
+- El IDE utilizado es el IntelliJ Idea , al momento de la creación del trabajo facilita el código y avisa de cualquier error o posible modificación para mejorar el código, inicie con la clase escape room la cual fluctuó en las habitaciones con sus diferentes enigmas. Al momento de compilar el código usé el debug para poder ver si el código seguía el camino lógico que debería seguir y así poder ver si hay un error que genera ese error.
+- 
+- Para las pruebas he realizado una prueba de la función de extensión normalizar para comprobar su correcto funcionamiento.
+
 
 #### **Criterio global 4: Definir clases y su contenido**
 - **(4.b, 4.c, 4.d, 4.g)**: Explica sobre un ejemplo de tu código, cómo definiste las clases en tu proyecto, es decir como identificaste las de propiedades, métodos y constructores y modificadores del control de acceso a métodos y propiedades, para representar al objeto del mundo real. ¿Cómo contribuyen estas clases a la solución del problema que tu aplicación aborda?
