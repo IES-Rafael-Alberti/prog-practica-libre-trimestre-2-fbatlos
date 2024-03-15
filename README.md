@@ -66,6 +66,10 @@ Este conjunto de preguntas está diseñado para ayudarte a reflexionar sobre có
 
 #### **Criterio global 1: Instancia objetos y hacer uso de ellos**
 - **(2.a, 2.b, 2.c, 2.d, 2.f, 2.h, 4.f, 4.a)**: Describe cómo has instanciado y utilizado objetos en tu proyecto. ¿Cómo has aplicado los constructores y pasado parámetros a los métodos? Proporciona ejemplos específicos de tu código.
+  –He instanciado y utilizado objetos de diversas clases para representar todos los elementos que tiene mi escape room , siendo estos las habitaciones , la contraseña , los objetos que hay en la habitación y la consola.
+- Mis objetos se instancian en diversas partes como el main y en el método iniciar escape room.
+
+-https://github.com/IES-Rafael-Alberti/prog-practica-libre-trimestre-2-fbatlos/blob/475de939a49027e587893d58ce62a37c68f9ddbe/src/main/kotlin/Main.kt#L16-L20
 
 
 #### **Criterio global 2: Crear y llamar métodos estáticos**
