@@ -5,13 +5,23 @@ import org.practicatrim2.Historia
 import kotlin.random.Random
 
 /**
+ * Clase que representa una habitación en un juego de enigmas.
  *
+ * @property tematica La temática de la historia asociada a la habitación.
+ * @property contrasenia La contraseña requerida para resolver el enigma de la habitación.
+ * @property tipoHistoria El tipo de historia asociada a la habitación.
+ * @property pistacifrada La contraseña cifrada utilizada como pista para resolver el enigma.
+ * @property solucionado Indica si el enigma de la habitación ha sido resuelto o no.
+ * @property lugar El lugar actual en la habitación donde se encuentra el jugador.
  */
 open class Habitacion(tematica:Historia,val contrasenia: String){
     val tipoHistoria = tematica
     val pistacifrada = textoABinario(contrasenia)
     open var solucionado = false
     open var lugar = "habitacion"
+    /**
+     * Método que simula resolver el enigma de la habitación.
+     */
     open fun Enigma(){
         ponerPista(Random.nextInt(1,5))
         do {
@@ -20,7 +30,9 @@ open class Habitacion(tematica:Historia,val contrasenia: String){
 
         }while (!solucionado)
     }
-
+    /**
+     * Objeto que contiene las pistas de la habitación.
+     */
     object Objeto {
         var pistas = mutableMapOf(
             "cajones" to false,
@@ -29,7 +41,10 @@ open class Habitacion(tematica:Historia,val contrasenia: String){
             "senior" to false
         )
     }
-
+    /**
+     * Método que abre un objeto en la habitación para obtener una pista.
+     * @param nombreObjeto El nombre del objeto a abrir.
+     */
     open fun abrirObjeto(nombreObjeto:String){
         if (Objeto.pistas[nombreObjeto] == true){
             Consola().encontrarPista(pistacifrada)
@@ -38,7 +53,11 @@ open class Habitacion(tematica:Historia,val contrasenia: String){
             Consola().noHayPista()
         }
     }
-
+    /**
+     * Método que permite al jugador moverse dentro de la habitación.
+     * @param lugarDondeEstas El lugar actual donde se encuentra el jugador.
+     * @return El nuevo lugar donde se encuentra el jugador.
+     */
     open fun MovimientoJugador(lugarDondeEstas:String): String{
         var teHasMovido = false
         var lugarDondeVas: Int
@@ -100,13 +119,19 @@ open class Habitacion(tematica:Historia,val contrasenia: String){
         }while (teHasMovido == false)
         return ""
     }
-
+    /**
+     * Abre la puerta de la habitación y verifica si la contraseña proporcionada es correcta para resolver el enigma.
+     * @see comprobarSolucion
+     */
     open fun abrirPuerta() {
         Consola().mensajePuerta1(tipoHistoria)
         val posibleContrasenia =Consola().pedirContrasenia()
         solucionado = comprobarSolucion(contrasenia, posibleContrasenia)
     }
-
+    /**
+     * Pone una pista en un objeto específico de la habitación.
+     * @param lugar El índice del objeto en el que se colocará la pista.
+     */
     open fun ponerPista(lugar:Int){
         when(lugar){
             1 -> {Objeto.pistas["cajones"] = true}
@@ -115,7 +140,11 @@ open class Habitacion(tematica:Historia,val contrasenia: String){
             4 -> {Objeto.pistas["senior"] = true}
         }
     }
-
+    /**
+     * Convierte un texto en una representación binaria.
+     * @param texto El texto que se convertirá en binario.
+     * @return La representación binaria del texto.
+     */
     private fun textoABinario(texto: String): String {//Mirar como coger num y strings
         if(comprobarTexto(texto)){
             val textoEnigma1 = dividirTextoLetras(texto)
@@ -125,23 +154,40 @@ open class Habitacion(tematica:Historia,val contrasenia: String){
             return Integer.toBinaryString((textoEnigma1[0]+textoEnigma1[1]).toInt())
         }
     }
-
+    /**
+     * Verifica si un texto contiene caracteres no numéricos.
+     * @param texto El texto que se verificará.
+     * @return true si el texto contiene caracteres no numéricos, de lo contrario false.
+     */
     private fun comprobarTexto(texto: String):Boolean{
         return !texto.all { it.isDigit() }
     }
-
+    /**
+     * Divide un texto en palabras y devuelve la primera palabra.
+     * @param texto El texto que se dividirá.
+     * @return La primera palabra del texto.
+     */
     private fun dividirTextoLetras(texto: String): String {
         val texto = texto.split(" ")
         val textoDeLosPrimeros = texto[0]
         return textoDeLosPrimeros
     }
-
+    /**
+     * Divide un texto en palabras y devuelve una lista que contiene la primera palabra.
+     * @param texto El texto que se dividirá.
+     * @return Una lista que contiene la primera palabra del texto.
+     */
     private fun dividirTextoNumeros(texto: String):List<String>{
         val texto = texto.split(" ")
         val textoDeLosPrimeros = listOf(texto[0])
         return textoDeLosPrimeros
     }
-
+    /**
+     * Comprueba si la solución proporcionada es correcta comparándola con la contraseña del enigma.
+     * @param codigo La contraseña del enigma.
+     * @param posibleSolucio La solución proporcionada por el jugador.
+     * @return true si la solución es correcta, de lo contrario false.
+     */
     open fun  comprobarSolucion(codigo:String, posibleSolucio:String):Boolean{
         val codigoNecesario = codigo.split(" ")
         val Solucion = posibleSolucio.split(" ")

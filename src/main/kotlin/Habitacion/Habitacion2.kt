@@ -3,7 +3,13 @@ package org.practicatrim2.Habitacion
 import org.practicatrim2.Consola
 import org.practicatrim2.Historia
 import kotlin.random.Random
-
+/**
+ * Clase que representa una segunda habitación en un juego de enigmas.
+ * Esta clase extiende la clase `Habitacion` y sobrescribe algunos de sus métodos.
+ *
+ * @param tematica La temática de la historia asociada a la habitación.
+ * @param contrasenia La contraseña requerida para resolver el enigma de la habitación.
+ */
 class Habitacion2(tematica: Historia, contrasenia: String) :Habitacion(tematica, contrasenia) {
     override var solucionado = false
     override var lugar = "dormitorio"
@@ -15,7 +21,9 @@ class Habitacion2(tematica: Historia, contrasenia: String) :Habitacion(tematica,
 
         }while (!solucionado)
     }
-
+    /**
+     * Objeto que contiene las pistas asociadas a diferentes objetos dentro de la habitación.
+     */
     object Objeto {
         var pistas = mutableMapOf(
             "cama" to false,
@@ -127,7 +135,10 @@ class Habitacion2(tematica: Historia, contrasenia: String) :Habitacion(tematica,
             Consola().noHayPista()
         }
     }
-
+    /**
+     * Obtiene la adivinanza asociada a la contraseña del enigma de la habitación y muestra un mensaje según la adivinanza.
+     * @param contrasenia La contraseña del enigma de la habitación.
+     */
     fun obtenerAdivinanza(contrasenia: String){
         val adivinanza = contrasenia.split(" ")[1]
 
