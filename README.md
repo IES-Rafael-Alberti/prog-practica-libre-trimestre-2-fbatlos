@@ -164,13 +164,13 @@ https://github.com/IES-Rafael-Alberti/prog-practica-libre-trimestre-2-fbatlos/bl
 
 - Random
 
-Genera un numero aleatorio para elegir el tipo de historia.
+Genera un numero aleatorio para elegir el tipo de historia,lo he elejido ya que es el mas usado para sacar cualquier tipo de dato de forma aleatoria.
 
 https://github.com/IES-Rafael-Alberti/prog-practica-libre-trimestre-2-fbatlos/blob/420e9b030b030171ebca79545d9e76abede0aeb2/src/main/kotlin/EscapeRoom.kt#L4-L11
 
 -Jframe
 
-Printea la imagen seleccionada de cada fichero.
+Printea la imagen seleccionada de cada fichero , he elejido esta extension pues muestra la imagen de forma clara.
 
 https://github.com/IES-Rafael-Alberti/prog-practica-libre-trimestre-2-fbatlos/blob/420e9b030b030171ebca79545d9e76abede0aeb2/src/main/kotlin/Imagen.kt#L2-L61
 
