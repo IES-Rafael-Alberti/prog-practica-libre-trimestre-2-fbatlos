@@ -1,5 +1,6 @@
 package org.practicatrim2
 
+import normalizar
 
 
 class Consola {

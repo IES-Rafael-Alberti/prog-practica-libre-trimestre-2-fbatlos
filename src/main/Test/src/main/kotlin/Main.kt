@@ -1,5 +1,6 @@
 import org.practicatrim2.Consola
 import org.practicatrim2.EscapeRoom
+import org.practicatrim2.Habitacion.Habitacion2
 import org.practicatrim2.Usuario
 
 /**
@@ -13,8 +14,9 @@ fun String.normalizar():String{
     val palabrasCapitalizadas = cadaPalabra.map { it.replaceFirstChar { it.uppercase() } }
     return palabrasCapitalizadas.joinToString(" ")
 }
-fun main(){
-    val nombre = Consola().pedirNombre()
+
+fun main() {
+   val nombre = Consola().pedirNombre()
     val usuario1 = Usuario("pepe")
     EscapeRoom(usuario1).iniciarEscapeRoom()
 }
