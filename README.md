@@ -82,6 +82,7 @@ https://github.com/IES-Rafael-Alberti/prog-practica-libre-trimestre-2-fbatlos/bl
 
 #### **Criterio global 2: Crear y llamar métodos estáticos**
 - **(4.i)**: ¿Has definido algún método/propiedad estático en tu proyecto? ¿Cuál era el objetivo y por qué consideraste que debía ser estático en lugar de un método/propiedad de instancia?
+
 -Si , he creado los objetos de la habitacion de forma estatica ya que estos no quiero que se generen de no por su clase , es decir , para que cada habitacion tenga sus diferentes objetos :
 
 https://github.com/IES-Rafael-Alberti/prog-practica-libre-trimestre-2-fbatlos/blob/7f671630bbce322940012c577c0fae2863db373e/src/main/kotlin/Habitacion/Habitacion.kt#L33-L43
@@ -97,15 +98,60 @@ https://github.com/IES-Rafael-Alberti/prog-practica-libre-trimestre-2-fbatlos/bl
 - **(2.i)**: ¿Cómo utilizaste el IDE para el desarrollo de tu proyecto? Describe el proceso de creación, compilación, y prueba de tu programa.
 
 - El IDE utilizado es el IntelliJ Idea , al momento de la creación del trabajo facilita el código y avisa de cualquier error o posible modificación para mejorar el código, inicie con la clase escape room la cual fluctuó en las habitaciones con sus diferentes enigmas. Al momento de compilar el código usé el debug para poder ver si el código seguía el camino lógico que debería seguir y así poder ver si hay un error que genera ese error.
-- 
+
 - Para las pruebas he realizado una prueba de la función de extensión normalizar para comprobar su correcto funcionamiento.
 
+
+https://github.com/IES-Rafael-Alberti/prog-practica-libre-trimestre-2-fbatlos/blob/caf3109c001d7ef9eea981f72df3776e885131f0/src/main/Test/src/test/kotlin/MainKtTest.kt#L9-L19
 
 #### **Criterio global 4: Definir clases y su contenido**
 - **(4.b, 4.c, 4.d, 4.g)**: Explica sobre un ejemplo de tu código, cómo definiste las clases en tu proyecto, es decir como identificaste las de propiedades, métodos y constructores y modificadores del control de acceso a métodos y propiedades, para representar al objeto del mundo real. ¿Cómo contribuyen estas clases a la solución del problema que tu aplicación aborda?
 
+--Data class
+
+https://github.com/IES-Rafael-Alberti/prog-practica-libre-trimestre-2-fbatlos/blob/caf3109c001d7ef9eea981f72df3776e885131f0/src/main/kotlin/Usuario.kt#L6
+
+--Enum class
+
+https://github.com/IES-Rafael-Alberti/prog-practica-libre-trimestre-2-fbatlos/blob/caf3109c001d7ef9eea981f72df3776e885131f0/src/main/kotlin/Historias.kt#L1-L27
+
+--Open class
+
+https://github.com/IES-Rafael-Alberti/prog-practica-libre-trimestre-2-fbatlos/blob/caf3109c001d7ef9eea981f72df3776e885131f0/src/main/kotlin/Habitacion/Habitacion.kt#L7-L218
+
+-Las clases fueron creadas después de haber realizado un diagrama de flujo para saber qué quería exactamente , después de ese diagrama dictamine los métodos para que cumplieran las necesidades que quería para mi escape room y siempre intentando respetar los principios SOLID.
+
+
 #### **Criterio global 5: Herencia y uso de clases abstractas e interfaces**
 - **(4.h, 4.j, 7.a, 7.b, 7.c)**: Describe sobre tu código cómo has implementado la herencia o utilizado interfaces en tu proyecto. ¿Por qué elegiste este enfoque y cómo beneficia a la estructura de tu aplicación? ¿De qué manera has utilizado los principios SOLID para mejorar el diseño de tu proyecto? ¿Mostrando tu código, contesta a qué principios has utilizado y qué beneficio has obtenido?
+
+- Usos
+
+https://github.com/IES-Rafael-Alberti/prog-practica-libre-trimestre-2-fbatlos/blob/caf3109c001d7ef9eea981f72df3776e885131f0/src/main/kotlin/Contrase%C3%B1a.kt#L4-L15
+
+- Las interfaces nos permite generar los cimientos de lo que debe implementar cada clase que lo implemente.
+
+-#Los principios SOLID
+
+-SRP Single Responsibility Principle
+
+Lo podemos ver en consola ya que cada metodo tiene una resposabilidad unica en el codigo.
+
+https://github.com/IES-Rafael-Alberti/prog-practica-libre-trimestre-2-fbatlos/blob/caf3109c001d7ef9eea981f72df3776e885131f0/src/main/kotlin/Consola.kt#L6-L37
+
+-OCP Open Closed Principle
+
+Nos menciona que debemos hacer un codigo abierto para la extension.
+Para ello he creado un inteface generico.
+
+https://github.com/IES-Rafael-Alberti/prog-practica-libre-trimestre-2-fbatlos/blob/caf3109c001d7ef9eea981f72df3776e885131f0/src/main/kotlin/Contrase%C3%B1a.kt#L8-L15
+
+-LSP Liskov Substitution Principle
+
+Nos dice que debemos poder emplear elementos de una subclase en vez de elementos de una superclase sin necesidad de alterar el codigo.
+
+https://github.com/IES-Rafael-Alberti/prog-practica-libre-trimestre-2-fbatlos/blob/caf3109c001d7ef9eea981f72df3776e885131f0/src/main/kotlin/Habitacion/Habitacion.kt#L122-L130
+
 
 #### **Criterio global 6: Diseño de jerarquía de clases**
 - **(7.d, 7.e, 7.f, 7.g)**: Presenta la jerarquía de clases que diseñaste. ¿Cómo probaste y depuraste esta jerarquía para asegurar su correcto funcionamiento? ¿Qué tipo de herencia has utilizado: Especificación, Especialización, Extensión, Construcción?
