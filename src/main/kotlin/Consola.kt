@@ -27,20 +27,26 @@ class Consola {
         return nombre
     }
 
+    // Manda a consola el inicio de la historia **********************************
     fun historiaInico(historia:Historia){
         println("La habitacion cambio de forma y la historia que te ha tocado se titula :\n                                ${historia.name}")
         println("************************************************************************************************************************")
         println(historia.desc["Inicio"])
     }
 
+    // Manda a consola el final de la historia **********************************
 
     fun historiaFinal(historia: Historia){
         println(historia.desc["Final"])
     }
 
+    // Manda a consola donde estas mirando en la habitacion **********************************
+
     fun lugarDondeMiras(lugar:String){
         println("Estas mirando la $lugar.\n")
     }
+
+    // Manda a consola que has encontrado una pista **********************************
 
     fun encontrarPista(pistacifrada:String){
         println("Oh , hay algo")
@@ -54,6 +60,8 @@ class Consola {
         println("Sabes que es ?")
     }
 
+    // Manda a consola que ha encontrado una pista para la habitacion 2 **********************************
+
     fun encontrarPista2(){
         println("Oh , hay algo")
         val cantidadPuntos = 5
@@ -64,14 +72,20 @@ class Consola {
         }
     }
 
+    //Manda por consola que no hay pista donde está mirando
+
     fun noHayPista(){
         println("No hay nada has perdido 2 min.")
     }
+
+    //Manda por consola que no existe la opcion que ha seleccionado
 
     fun noExiste(){
         println("No existe donde quieres ir.")
     }
 
+
+    //Manda por consola el mensaje de como debe introducir la contraseña
 
     fun mensajePuerta2(historia: Historia){
         val mensaje = if (historia.name == "Maldicion") {
@@ -82,6 +96,8 @@ class Consola {
         print(mensaje)
     }
 
+    //Manda por consola el mensaje de la primera habitacion
+
     fun mensajePuerta1(historia: Historia){
         val mensaje = if (historia.name == "Maldicion") {
             "La puerta solo permite una palabra sino nunca lo dará por buena.\nContraseña : "
@@ -90,6 +106,8 @@ class Consola {
         }
         print(mensaje)
     }
+
+    //Lee por consola la contraseña y se asegura que no este vacia
 
     fun pedirContrasenia(): String {
         var posibleContrasenia = ""
@@ -111,6 +129,8 @@ class Consola {
         return posibleContrasenia
     }
 
+    //Lee por consola el lugar donde quiere ir
+
     fun pedirLugarDondeIr():Int {
         var cambioConsegido = false
         var numero:String
@@ -128,32 +148,46 @@ class Consola {
         return numero.toInt()
     }
 
+    //Manda por consola los lugares donde puede mirar en la primera habitacion
+
    fun mostrarLugares1(){
        println("Donde quieres ir?")
        print("Opciones donde mirar :\n1º cajones.\n2º lampara.\n3º armario.\n4º señor.\n5º habitacion.\n6º puerta\n")
    }
+
+    //Manda por consola los lugares donde puede mirar en la segunda habitacion
 
     fun mostrarLugares2(){
         println("Donde quieres ir?")
         print("Opciones donde mirar :\n1º cama.\n2º mesilla.\n3º cuadro.\n4º gato.\n5º dormitorio.\n6º puerta\n")
     }
 
+    //Manda por consola que la puerta se ha abierto
+
     fun abrePuerta(){
         println("\nLa puesta se ha abierto!!!!!!!!!!.\n"+
                 "\nTe das cuenta que estas en otra habitacion")
     }
 
+    //Manda por consola la puerta habitacion 1 no se abre
+
     fun noSeAbrePuerta(){
         println("Hay algo mal pero no sabes que es...")
     }
+
+    //Manda por consola la puerta habitacion 2 no se abre
 
     fun noSeAbrePuerta2(){
         println("Tendre que usar alguna pista que ya haya usado ? .")
     }
 
+    //Manda por consola que ya estas en el lugar donde quieres ir
+
     fun noMovimiento(){
         println("Ya estas ahí.")
     }
+
+    //Manda por consola la mitad de la historia
 
     fun historiaIntermedia(historia: Historia){
         println(historia.desc["Intermedio"])
@@ -164,10 +198,16 @@ class Consola {
         }
     }
 
-    fun comprobarContraseña(contraseña: String ): Boolean {
+    /**
+     * comprueba si la contraseña es la valida
+     * @param contrasenia La contraseña de la habitacion
+     * @return Boolean Si es la correcta o no
+     */
+
+    fun comprobarContrasenia(contrasenia: String ): Boolean {
         print("Contraseña -> ")
         val posibleContraseña = readln().normalizar()
-        if (contraseña == posibleContraseña){
+        if (contrasenia == posibleContraseña){
             println("¡El candado se ha abierto!\n")
             return true
         }
@@ -177,6 +217,7 @@ class Consola {
         }
     }
 
+    //Las Adivinanzas ************************************************
 
     fun maldicionAdivinanaza1(){
         println("\nEn la cima de la montaña me hallarás,\n" +

@@ -12,7 +12,7 @@ class Habitacion3(val tematica: Historia, val contraseña: String) {
         Consola().historiaIntermedia(tematica)
         val imagen = Imagen().mostrar(tematica,contraseña)
         do {
-            solucionado = Consola().comprobarContraseña(contraseña)
+            solucionado = Consola().comprobarContrasenia(contraseña)
         }while (solucionado != true)
         Imagen().cerrar(imagen)
     }

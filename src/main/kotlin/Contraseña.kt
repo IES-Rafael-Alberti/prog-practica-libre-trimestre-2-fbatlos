@@ -2,7 +2,7 @@ package org.practicatrim2
 
 import java.io.File
 /**
- * Interfaz para la generación de contraseñas basadas en una temática específica.
+ * Interfaz Generica para la generación de contraseñas basadas en una temática específica, es generica ya que da la posibilidad de dar una Historia de cualquier tipo.
  * @param Historia Tipo de dato que representa la temática de la contraseña.
  */
 interface Contrasenia<T>{
